@@ -1,9 +1,10 @@
+import { Container } from "react-bootstrap";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <Container className="py-5">
       <h1>hello next</h1>
-    </div>
+    </Container>
   );
 }

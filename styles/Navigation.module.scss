@@ -8,7 +8,14 @@
   a {
     text-decoration: none !important;
     color: $tertiary-color;
+    font-family: $body-font-family;
     font-size: 18px;
-    font-family: $title-font-family;
+    margin-right: 20px;
+    &:hover {
+      color: $primary-color;
+    }
+    &:active {
+      color: $tertiary-color;
+    }
   }
 }

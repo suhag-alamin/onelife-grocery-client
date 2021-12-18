@@ -16,18 +16,18 @@ const Navigation = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link as={Link} className="nav-link" href="/">
+              <Nav.Link as={Link} href="/">
                 <a>Home</a>
               </Nav.Link>
-              {/* <Nav.Link as={Link} className={navStyles.navLink} href="/shop">
+              <Nav.Link as={Link} href="/shop">
                 Shop
               </Nav.Link>
-              <Nav.Link as={Link} className={navStyles.navLink} href="/about">
+              <Nav.Link as={Link} href="/about">
                 About
               </Nav.Link>
-              <Nav.Link as={Link} className={navStyles.navLink} href="/contact">
+              <Nav.Link as={Link} href="/contact">
                 Contact
-              </Nav.Link> */}
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

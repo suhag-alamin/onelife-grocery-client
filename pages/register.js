@@ -1,9 +1,10 @@
 import React from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 import registerStyles from "../styles/Register.module.scss";
 
-const register = () => {
+const Register = () => {
   const {
     register,
     handleSubmit,
@@ -11,6 +12,7 @@ const register = () => {
   } = useForm();
   const onSubmit = (data) => console.log(data);
   console.log(errors);
+  //   useEffect(() => {}, []);
   return (
     <Container className="py-5">
       <h3>Registration</h3>
@@ -46,4 +48,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default Register;

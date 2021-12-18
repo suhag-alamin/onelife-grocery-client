@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
-const login = () => {
+const Login = () => {
   return (
     <Container className="py-5">
       <h3>this is login</h3>
@@ -9,4 +9,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

@@ -1,5 +1,5 @@
 {
-  "name": "onelife-grocery",
+  "name": "onelife-grocery-client",
   "private": true,
   "scripts": {
     "dev": "next dev",

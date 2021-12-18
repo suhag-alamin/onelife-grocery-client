@@ -1,0 +1,19 @@
+@import "./variables.module.scss";
+@import "./mixins";
+
+.registration {
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    gap: 20px;
+
+    &:input {
+      padding: 5px;
+    }
+    button {
+      @include onelifeButton;
+    }
+  }
+}

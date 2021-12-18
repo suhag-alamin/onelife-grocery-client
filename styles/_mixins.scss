@@ -1,0 +1,8 @@
+@mixin onelifeButton {
+  background: $tertiary-color;
+  color: $white-color;
+  border: none;
+  &:hover {
+    background: $tertiary-color;
+  }
+}

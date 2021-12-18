@@ -32,6 +32,9 @@ const Navigation = () => {
               <Nav.Link as={Link} className="mt-2 mt-md-0" href="/contact">
                 Contact
               </Nav.Link>
+              <Nav.Link as={Link} className="mt-2 mt-md-0" href="/login">
+                Login
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

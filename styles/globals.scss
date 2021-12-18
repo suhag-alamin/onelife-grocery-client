@@ -1,0 +1,15 @@
+@import "./variables.module.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none !important;
+  color: $secondary-color;
+  &:hover {
+    color: $primary-color;
+  }
+}

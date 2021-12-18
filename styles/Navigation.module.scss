@@ -4,15 +4,37 @@
   color: $text-color !important;
 }
 .nav {
-  // background: #000 !important;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $secondary-color;
   a {
     text-decoration: none !important;
-    color: $tertiary-color;
+    color: $secondary-color;
     font-family: $body-font-family;
     font-size: 18px;
     margin-right: 20px;
+    position: relative;
+    transition: 0.4s;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      width: 0%;
+      height: 1px;
+      background: $primary-color;
+      visibility: hidden;
+      transition: 0.4s;
+    }
     &:hover {
+      &::after {
+        visibility: visible;
+        width: 100%;
+      }
+      visibility: visible;
       color: $primary-color;
+      font-weight: 500;
     }
     &:active {
       color: $tertiary-color;

@@ -5,6 +5,10 @@ $text-color: #383f51;
 $white-color: #f8f4e3;
 $tertiary-color: #4b8f8c;
 
+:export {
+  primaryColor: $primary-color;
+}
+
 // font family
 $body-font-family: "Roboto", sans-serif;
 $title-font-family: "Oswald", sans-serif;

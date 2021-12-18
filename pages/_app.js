@@ -1,12 +1,16 @@
 import Layout from "../components/Layout";
-import "../styles/style.css";
+import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "../components/Header";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <Header />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }
 

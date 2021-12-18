@@ -1,0 +1,14 @@
+@import "./variables.module.scss";
+
+.navLink {
+  color: $text-color !important;
+}
+.nav {
+  // background: #000 !important;
+  a {
+    text-decoration: none !important;
+    color: $tertiary-color;
+    font-size: 18px;
+    font-family: $title-font-family;
+  }
+}

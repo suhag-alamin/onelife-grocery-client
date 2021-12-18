@@ -14,7 +14,7 @@
     font-size: 18px;
     margin-right: 20px;
     position: relative;
-    transition: 0.4s;
+    transition: $transition;
     &::after {
       content: "";
       position: absolute;
@@ -39,5 +39,8 @@
     &:active {
       color: $tertiary-color;
     }
+  }
+  .logo {
+    cursor: pointer !important;
   }
 }

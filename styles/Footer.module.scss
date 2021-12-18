@@ -1,0 +1,24 @@
+@import "./variables.module.scss";
+
+.footerSection {
+  background: lighten($color: #2c3a47, $amount: 0%);
+  color: $white-color;
+  h4 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $white-color;
+  }
+  a {
+    color: $white-color;
+    transition: $transition;
+    &:hover {
+      color: $primary-color;
+      text-decoration: underline !important;
+    }
+  }
+  svg {
+    color: $primary-color;
+  }
+  .smallText {
+    font-size: 14px;
+  }
+}

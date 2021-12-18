@@ -11,7 +11,11 @@ const Navigation = () => {
       <Navbar sticky="top" className={navStyles.nav} bg="light" expand="lg">
         <Container>
           <Navbar.Brand as={Link} href="/">
-            <Image src={logo} alt="OneLIfe-Grocery" />
+            <Image
+              className={navStyles.logo}
+              src={logo}
+              alt="OneLIfe-Grocery"
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

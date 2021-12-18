@@ -1,12 +1,19 @@
 @import "./variables.module.scss";
 @import "./mixins";
 
+.title {
+  color: $primary-color;
+}
+
 .registration {
+  width: 50%;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
   form {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin: auto;
+
     gap: 20px;
 
     &:input {
@@ -14,6 +21,13 @@
     }
     button {
       @include onelifeButton;
+    }
+  }
+  a {
+    color: $secondary-color;
+    transition: $transition;
+    &:hover {
+      color: $primary-color;
     }
   }
 }

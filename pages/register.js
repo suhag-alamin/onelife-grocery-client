@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
@@ -12,30 +13,31 @@ const Register = () => {
   } = useForm();
   const onSubmit = (data) => console.log(data);
   console.log(errors);
-  //   useEffect(() => {}, []);
   return (
-    <Container className="py-5">
-      <h3>Registration</h3>
-      <div className={registerStyles.registration}>
+    <Container className="py-5 mb-5">
+      <h3 className={`${registerStyles.title} text-center mb-4`}>
+        Registration
+      </h3>
+      <div className={`${registerStyles.registration} shadow`}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Form.Control
             type="text"
-            placeholder="userName"
+            placeholder="Your Name"
             {...register("userName", { required: true })}
           />
           <Form.Control
             type="text"
-            placeholder="email"
+            placeholder="Email Address"
             {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
           />
           <Form.Control
             type="text"
-            placeholder="password"
+            placeholder="Your password"
             {...register("password", { required: true })}
           />
           <Form.Control
             type="text"
-            placeholder="reEnterPassword"
+            placeholder="Re enter your password"
             {...register("reEnterPassword", { required: true })}
           />
 
@@ -43,6 +45,9 @@ const Register = () => {
             Register
           </Button>
         </form>
+        <p>
+          Already registered? <Link href="/login">Login</Link>{" "}
+        </p>
       </div>
     </Container>
   );

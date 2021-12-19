@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import useAuth from "../../hooks/useAuth";
 import logo from "../../images/logo.png";
 import navStyles from "../../styles/Navigation.module.scss";
 
 const Navigation = () => {
+  const { user, logOut } = useAuth();
   return (
     <>
       <Navbar sticky="top" className={navStyles.nav} bg="light" expand="lg">
@@ -35,6 +37,10 @@ const Navigation = () => {
               <Nav.Link as={Link} className="mt-2 mt-md-0" href="/login">
                 Login
               </Nav.Link>
+              {user.email && <p>{user.displayName}</p>}
+              <Button onClick={logOut} variant="text">
+                Log Out
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>

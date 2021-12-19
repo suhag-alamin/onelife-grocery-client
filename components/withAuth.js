@@ -8,7 +8,7 @@ const withAuth = (Component) => {
     const { user, isLoading } = useAuth();
 
     // useEffect(() => {
-    if (!user.email || isLoading === true) {
+    if (isLoading === true) {
       return (
         <div className="text-center py-2">
           <Spinner animation="border" />

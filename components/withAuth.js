@@ -1,9 +1,21 @@
+import { useEffect } from "react";
+import { Spinner } from "react-bootstrap";
 import useAuth from "../hooks/useAuth";
 import Login from "../pages/login";
 
 const withAuth = (Component) => {
   const Auth = (props) => {
-    const { user } = useAuth();
+    const { user, isLoading } = useAuth();
+
+    // useEffect(() => {
+    if (!user.email || isLoading === true) {
+      return (
+        <div className="text-center py-2">
+          <Spinner animation="border" />
+        </div>
+      );
+    }
+    // }, [user?.email, isLoading]);
 
     // Login data added to props via redux-store (or use react context for example)
     const { isLoggedIn } = props;

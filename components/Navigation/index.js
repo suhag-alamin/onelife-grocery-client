@@ -8,6 +8,7 @@ import navStyles from "../../styles/Navigation.module.scss";
 
 const Navigation = () => {
   const { user, logOut } = useAuth();
+  console.log(user.photoURL);
   return (
     <>
       <Navbar sticky="top" className={navStyles.nav} bg="light" expand="lg">
@@ -21,7 +22,7 @@ const Navigation = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto d-flex align-items-center">
               <Nav.Link as={Link} className="mt-2 mt-md-0" href="/">
                 <a>Home</a>
               </Nav.Link>
@@ -34,13 +35,20 @@ const Navigation = () => {
               <Nav.Link as={Link} className="mt-2 mt-md-0" href="/contact">
                 Contact
               </Nav.Link>
-              <Nav.Link as={Link} className="mt-2 mt-md-0" href="/login">
-                Login
-              </Nav.Link>
-              {user.email && <p>{user.displayName}</p>}
-              <Button onClick={logOut} variant="text">
-                Log Out
-              </Button>
+              {user?.email && (
+                <div className="me-2">
+                  <span>{user?.displayName}</span>
+                </div>
+              )}
+              {!user?.email ? (
+                <Nav.Link as={Link} className="mt-2 mt-md-0" href="/login">
+                  Login
+                </Nav.Link>
+              ) : (
+                <Button onClick={logOut} variant="">
+                  Log Out
+                </Button>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

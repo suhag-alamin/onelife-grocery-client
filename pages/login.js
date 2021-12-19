@@ -8,15 +8,17 @@ import useAuth from "../hooks/useAuth";
 import registerStyles from "../styles/Register.module.scss";
 
 const Login = () => {
-  const { signInWithGoogle } = useAuth();
+  const { signInWithGoogle, handleEmailLogin } = useAuth();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const { email, password } = data;
+    handleEmailLogin(email, password);
+  };
   console.log(errors);
-  //   useEffect(() => {}, []);
   return (
     <>
       {/* title  */}
@@ -33,13 +35,13 @@ const Login = () => {
               {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
             />
             <Form.Control
-              type="text"
+              type="password"
               placeholder="Your password"
               {...register("password", { required: true })}
             />
 
             <Button type="submit" variant="success">
-              Register
+              Login
             </Button>
           </form>
           <p>

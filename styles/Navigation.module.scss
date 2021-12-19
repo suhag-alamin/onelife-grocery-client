@@ -1,5 +1,5 @@
 @import "./variables.module.scss";
-
+@import "./mixins";
 .navLink {
   color: $text-color !important;
 }
@@ -42,5 +42,12 @@
   }
   .logo {
     cursor: pointer !important;
+  }
+
+  button {
+    @include onelifeButton;
+    &:hover {
+      color: $white-color;
+    }
   }
 }

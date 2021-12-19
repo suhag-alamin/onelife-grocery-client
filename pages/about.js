@@ -1,6 +1,7 @@
 import React from "react";
+import withAuth from "../components/withAuth";
 
-const about = () => {
+const About = () => {
   return (
     <div>
       <h1>this is about</h1>
@@ -8,4 +9,9 @@ const about = () => {
   );
 };
 
-export default about;
+About.getInitialProps = async (props) => {
+  console.info("##### Congratulations! You are authorized! ######", props);
+  return {};
+};
+
+export default withAuth(About);

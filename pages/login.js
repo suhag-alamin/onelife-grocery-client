@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
@@ -9,6 +10,8 @@ import registerStyles from "../styles/Register.module.scss";
 
 const Login = () => {
   const { signInWithGoogle, handleEmailLogin } = useAuth();
+  const router = useRouter();
+  console.log(router);
   const {
     register,
     handleSubmit,

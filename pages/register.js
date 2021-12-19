@@ -19,7 +19,6 @@ const Register = () => {
   } = useForm();
   const onSubmit = (data) => {
     const { userName, email, password, reEnterPassword } = data;
-    console.log(data);
     if (password !== reEnterPassword) {
       toast.info("Password Is not matched");
       return;

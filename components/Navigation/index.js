@@ -8,7 +8,6 @@ import navStyles from "../../styles/Navigation.module.scss";
 
 const Navigation = () => {
   const { user, logOut } = useAuth();
-  console.log(user.photoURL);
   return (
     <>
       <Navbar sticky="top" className={navStyles.nav} bg="light" expand="lg">

@@ -4,5 +4,7 @@
   border: none;
   &:hover {
     background: $tertiary-color;
+    background: darken($color: $tertiary-color, $amount: 10);
+    color: $white-color;
   }
 }

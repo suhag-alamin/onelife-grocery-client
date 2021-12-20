@@ -7,9 +7,11 @@ import logo from "../../images/logo.png";
 import navStyles from "../../styles/Navigation.module.scss";
 import { AiOutlineShoppingCart, AiOutlineLogin } from "react-icons/ai";
 import { BiLogOutCircle } from "react-icons/bi";
+import { useSelector } from "react-redux";
 
 const Navigation = () => {
   const { user, logOut } = useAuth();
+  const { cartItems } = useSelector((state) => state.oneLifeGrocery);
   return (
     <>
       <Navbar sticky="top" className={navStyles.nav} bg="light" expand="lg">
@@ -41,7 +43,7 @@ const Navigation = () => {
             <Nav className="ms-auto d-flex align-items-center">
               <div className="me-4">
                 <AiOutlineShoppingCart className="fs-4" />
-                <small className="cart-item">50</small>
+                <small className="cart-item">{cartItems.length}</small>
               </div>
               {user?.email && (
                 <div className="me-2">

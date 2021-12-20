@@ -1,0 +1,8 @@
+@import "./variables.module.scss";
+@import "./mixins";
+
+.shop {
+  button {
+    @include onelifeButton;
+  }
+}

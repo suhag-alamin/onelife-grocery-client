@@ -19,9 +19,9 @@ const grocerySlice = createSlice({
     cartItems: [],
   },
   reducers: {
-    // addToCart: (state, { payload }) => {
-    //   state.readingList.push(payload);
-    // },
+    addToCart: (state, { payload }) => {
+      state.cartItems.push(payload);
+    },
     // removeFromReadingList: (state, { payload }) => {
     //   state.readingList = state.readingList.filter(
     //     (book) => book._id !== payload
@@ -40,6 +40,6 @@ const grocerySlice = createSlice({
   },
 });
 
-export const { addToReadingList, removeFromReadingList } = grocerySlice.actions;
+export const { addToCart } = grocerySlice.actions;
 
 export default grocerySlice.reducer;

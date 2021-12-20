@@ -1,14 +1,25 @@
-import React from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import SingleGrocery from "../../SingleGrocery";
-import shopStyles from "../../../styles/Shop.module.scss";
-import { AiOutlineArrowRight } from "react-icons/ai";
 import { useRouter } from "next/router";
+import React from "react";
+import { Button, Col, Container, Row, Spinner } from "react-bootstrap";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { useSelector } from "react-redux";
+import shopStyles from "../../../styles/Shop.module.scss";
+import SingleGrocery from "../../SingleGrocery";
 
 const LatestProdcuts = () => {
-  const { groceries } = useSelector((state) => state.oneLifeGrocery);
+  const { oneLifeGrocery } = useSelector((state) => state);
+  const { groceries } = oneLifeGrocery;
   const router = useRouter();
+
+  // loading spinner
+  if (oneLifeGrocery.status === "pending") {
+    return (
+      <div className="text-center py-2">
+        <Spinner animation="border" />
+      </div>
+    );
+  }
+
   const handleClick = () => {
     router.push("/shop");
   };

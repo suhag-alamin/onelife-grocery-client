@@ -6,7 +6,6 @@ export const fetchGroceries = createAsyncThunk(
     const response = await fetch(
       "https://onelife-grocery.herokuapp.com/groceries"
     ).then((res) => res.json());
-    console.log(response);
     return response;
   }
 );

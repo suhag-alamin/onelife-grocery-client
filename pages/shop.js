@@ -10,15 +10,17 @@ import shopStyles from "../styles/Shop.module.scss";
 const Shop = () => {
   const [isLoading, setIsLoading] = useState(true);
   // get groceries from redux store
-  const { groceries } = useSelector((state) => state.oneLifeGrocery);
+  const { oneLifeGrocery } = useSelector((state) => state);
+  const { groceries } = oneLifeGrocery;
   // dispatch
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchGroceries());
     setIsLoading(false);
   }, [dispatch]);
+
   // loading spinner
-  if (isLoading === true) {
+  if (oneLifeGrocery.status === "pending") {
     return (
       <div className="text-center py-2">
         <Spinner animation="border" />

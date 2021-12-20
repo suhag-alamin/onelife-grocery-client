@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 
 const Navigation = () => {
   const { user, logOut } = useAuth();
-  const { cartItems } = useSelector((state) => state.oneLifeGrocery);
+  const { cartItems } = useSelector((state) => state.groceryCart);
   return (
     <>
       <Navbar sticky="top" className={navStyles.nav} bg="light" expand="lg">

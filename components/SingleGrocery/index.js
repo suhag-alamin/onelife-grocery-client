@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button, Card } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../redux/slices/grocerySlice";
+import { addToCart } from "../../redux/slices/cartSlice";
 
 const SingleGrocery = ({ grocery }) => {
   const { _id, name, price, description, categories, weight, productImg } =

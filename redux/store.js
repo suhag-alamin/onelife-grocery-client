@@ -12,13 +12,18 @@ import {
   REGISTER,
 } from "redux-persist";
 import grocerySlice from "./slices/grocerySlice";
+import cartSlice from "./slices/cartSlice";
 
 const persistConfig = {
   key: "oneLifeGrocery",
   storage,
+  blacklist: ["oneLifeGrocery"],
 };
 
-const reducers = combineReducers({ oneLifeGrocery: grocerySlice });
+const reducers = combineReducers({
+  oneLifeGrocery: grocerySlice,
+  groceryCart: cartSlice,
+});
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 

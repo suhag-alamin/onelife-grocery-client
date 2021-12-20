@@ -10,18 +10,16 @@ export const fetchGroceries = createAsyncThunk(
     return response;
   }
 );
-fetchGroceries();
 
 const grocerySlice = createSlice({
   name: "grocery",
   initialState: {
     groceries: [],
-    cartItems: [],
   },
   reducers: {
-    addToCart: (state, { payload }) => {
-      state.cartItems.push(payload);
-    },
+    // addToCart: (state, { payload }) => {
+    //   state.cartItems.push(payload);
+    // },
     // removeFromReadingList: (state, { payload }) => {
     //   state.readingList = state.readingList.filter(
     //     (book) => book._id !== payload
@@ -40,6 +38,6 @@ const grocerySlice = createSlice({
   },
 });
 
-export const { addToCart } = grocerySlice.actions;
+// export const { addToCart } = grocerySlice.actions;
 
 export default grocerySlice.reducer;

@@ -1,5 +1,26 @@
 @import "./variables.module.scss";
-
+@import "./mixins";
 .text {
   color: $primary-color;
+}
+.bannerSection {
+  background: linear-gradient(
+      90deg,
+      rgba(56, 63, 81, 0.8) 60%,
+      rgba(75, 143, 140, 0.6) 70%
+    ),
+    url(../images/banner-bg.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 200px 0;
+  h1,
+  p {
+    color: $white-color;
+    text-align: center;
+  }
+  a {
+    @include onelifeButton;
+    &:hover {
+      color: $white-color;
+    }
+  }
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import Header from "../components/Header";
 import SingleGrocery from "../components/SingleGrocery";
 import { fetchGroceries } from "../redux/slices/grocerySlice";
 import shopStyles from "../styles/Shop.module.scss";
@@ -29,17 +30,21 @@ const Shop = () => {
   }
 
   return (
-    <div className={shopStyles.shop}>
-      <Container className="py-5">
-        <Row xs={1} md={4} className="g-4">
-          {groceries.map((grocery) => (
-            <Col key={grocery._id}>
-              <SingleGrocery grocery={grocery} />
-            </Col>
-          ))}
-        </Row>
-      </Container>
-    </div>
+    <>
+      {/* tittle  */}
+      <Header title="Shop - OneLife Grocery" />
+      <div className={shopStyles.shop}>
+        <Container className="py-5">
+          <Row xs={1} md={4} className="g-4">
+            {groceries.map((grocery) => (
+              <Col key={grocery._id}>
+                <SingleGrocery grocery={grocery} />
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </div>
+    </>
   );
 };
 

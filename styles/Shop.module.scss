@@ -6,7 +6,38 @@
     font-size: $font-title-size;
     color: $primary-color;
   }
+  .card {
+    transition: $transition;
+    img {
+      transition: $transition;
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0.125rem 0.25rem lighten($color: $text-color, $amount: 50) !important;
+      border: 1px solid $tertiary-color;
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+    .cardTitle {
+      color: $secondary-color;
+    }
+    p {
+      color: $text-color;
+    }
+    .price {
+      color: $primary-color;
+      font-family: $title-font-family;
+      font-weight: 700;
+      font-size: 20px;
+    }
+  }
+
   button {
     @include onelifeButton;
   }
+}
+
+.groceryDetails {
 }

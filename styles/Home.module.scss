@@ -47,3 +47,25 @@
     }
   }
 }
+
+// others banner
+.OthersBanner {
+  background: linear-gradient(
+      90deg,
+      rgba(56, 63, 81, 0.8) 60%,
+      rgba(75, 143, 140, 0.6) 70%
+    ),
+    url(../images/others-banner.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 100px 0;
+  color: $white-color;
+  text-align: center;
+  a,
+  span {
+    color: $white-color !important;
+    font-size: 20px;
+  }
+  svg {
+    color: $secondary-color;
+  }
+}

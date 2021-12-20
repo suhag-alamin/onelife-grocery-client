@@ -1,10 +1,13 @@
-import { Container } from "react-bootstrap";
-import Banner from "../components/Banner";
-import styles from "../styles/Home.module.scss";
+import Banner from "../components/HomeComponents/Banner";
+import Features from "../components/HomeComponents/Features";
+
 export default function Home() {
   return (
     <div>
+      {/* banner  */}
       <Banner />
+      {/* features  */}
+      <Features />
     </div>
   );
 }

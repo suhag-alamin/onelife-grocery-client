@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { Button, Container } from "react-bootstrap";
-import homeStyes from "../../styles/Home.module.scss";
+import homeStyes from "../../../styles/Home.module.scss";
 
 const Banner = () => {
   return (

@@ -24,3 +24,26 @@
     }
   }
 }
+.featureSection {
+  .featureBox {
+    background: lighten($color: $tertiary-color, $amount: 50);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    transition: $transition;
+    h4 {
+      margin: 0;
+    }
+    svg {
+      font-size: 60px !important;
+      color: $primary-color;
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: none !important;
+    }
+  }
+}

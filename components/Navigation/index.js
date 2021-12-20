@@ -41,10 +41,16 @@ const Navigation = () => {
             </Nav>
             {/* right part  */}
             <Nav className="ms-auto d-flex align-items-center">
-              <div className="me-4">
-                <AiOutlineShoppingCart className="fs-4" />
-                <small className="cart-item">{cartItems.length}</small>
-              </div>
+              <Nav.Link
+                as={Link}
+                href="/cart"
+                className={`${navStyles.cart} me-4`}
+              >
+                <a>
+                  <AiOutlineShoppingCart className="fs-4" />
+                  <small className="cart-item">{cartItems.length}</small>
+                </a>
+              </Nav.Link>
               {user?.email && (
                 <div className="me-2">
                   <span>{user?.displayName}</span>

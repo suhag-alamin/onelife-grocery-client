@@ -2,6 +2,10 @@
 @import "./mixins";
 
 .shop {
+  .title {
+    font-size: $font-title-size;
+    color: $primary-color;
+  }
   button {
     @include onelifeButton;
   }

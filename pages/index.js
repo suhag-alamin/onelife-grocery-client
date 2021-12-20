@@ -1,5 +1,6 @@
 import Banner from "../components/HomeComponents/Banner";
 import Features from "../components/HomeComponents/Features";
+import LatestProdcuts from "../components/HomeComponents/LatestProdcuts";
 
 export default function Home() {
   return (
@@ -8,6 +9,8 @@ export default function Home() {
       <Banner />
       {/* features  */}
       <Features />
+      {/* latest products  */}
+      <LatestProdcuts />
     </div>
   );
 }

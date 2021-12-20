@@ -50,4 +50,15 @@
       color: $white-color;
     }
   }
+  svg {
+    color: $primary-color;
+  }
+  small {
+    color: $secondary-color;
+    position: relative;
+    left: -5px;
+    top: -5px;
+    font-family: $title-font-family;
+    background: $white-color;
+  }
 }

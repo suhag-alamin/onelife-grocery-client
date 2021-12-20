@@ -40,4 +40,22 @@
 }
 
 .groceryDetails {
+  .title {
+    color: $secondary-color;
+  }
+  .price {
+    color: $primary-color;
+    font-family: $title-font-family;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  p {
+    color: $text-color;
+  }
+  b {
+    color: $tertiary-color;
+  }
+  button {
+    @include onelifeButton;
+  }
 }

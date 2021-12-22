@@ -8,6 +8,15 @@
     font-size: $font-title-size;
     margin-bottom: 20px;
   }
+  .totalPrice {
+    color: $tertiary-color;
+    span {
+      color: $primary-color;
+      font-family: $title-font-family;
+      font-weight: 700;
+      font-size: 20px;
+    }
+  }
   .singleItem {
     background: lighten($color: $tertiary-color, $amount: 52);
     padding: 20px;

@@ -16,7 +16,6 @@ export const fetchGroceries = createAsyncThunk(
     const response = await axios.get(
       "https://onelife-grocery.herokuapp.com/groceries"
     );
-    console.log(response.data);
     return response.data;
   }
 );

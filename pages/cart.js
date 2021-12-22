@@ -23,12 +23,27 @@ const Cart = () => {
           </Col>
         ))}
       </Row>
-      <div className="mt-4">
-        <Button onClick={handleClick} variant="">
-          {" "}
-          Proceed to checkout
-        </Button>
-      </div>
+      <Row
+        xs={1}
+        md={2}
+        className={`${cartStyles.singleItem} g-4 align-items-center mt-4`}
+      >
+        <Col>
+          <h4 className={cartStyles.totalPrice}>
+            Total price:{" "}
+            <span>$ {cartItems.reduce((pre, cur) => pre + cur.price, 0)}</span>
+          </h4>
+        </Col>
+
+        <Col>
+          <div className="text-end">
+            <Button onClick={handleClick} variant="">
+              {" "}
+              Proceed to checkout
+            </Button>
+          </div>
+        </Col>
+      </Row>
     </Container>
   );
 };

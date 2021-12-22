@@ -1,12 +1,23 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
+// export const fetchGroceries = createAsyncThunk(
+//   "grocery/fetchGroceries",
+//   async (userId, thunkAPI) => {
+//     const response = await fetch(
+//       "https://onelife-grocery.herokuapp.com/groceries"
+//     ).then((res) => res.json());
+//     return response;
+//   }
+// );
 export const fetchGroceries = createAsyncThunk(
   "grocery/fetchGroceries",
   async (userId, thunkAPI) => {
-    const response = await fetch(
+    const response = await axios.get(
       "https://onelife-grocery.herokuapp.com/groceries"
-    ).then((res) => res.json());
-    return response;
+    );
+    console.log(response.data);
+    return response.data;
   }
 );
 

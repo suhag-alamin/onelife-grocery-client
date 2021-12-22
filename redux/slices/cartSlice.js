@@ -9,14 +9,12 @@ const cartSlice = createSlice({
     addToCart: (state, { payload }) => {
       state.cartItems.push(payload);
     },
-    // removeFromReadingList: (state, { payload }) => {
-    //   state.readingList = state.readingList.filter(
-    //     (book) => book._id !== payload
-    //   );
-    // },
+    removeFromCart: (state, { payload }) => {
+      state.cartItems = state.cartItems.filter((cart) => cart._id !== payload);
+    },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, cartItemsLists } = cartSlice.actions;
 
 export default cartSlice.reducer;

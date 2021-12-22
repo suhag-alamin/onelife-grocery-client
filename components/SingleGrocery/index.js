@@ -31,7 +31,7 @@ const SingleGrocery = ({ grocery }) => {
           <Card.Text>{description.slice(0, 60)}...</Card.Text>
           <div className="d-flex justify-content-between align-items-center">
             <Button
-              onClick={() => dispatch(addToCart(_id))}
+              onClick={() => dispatch(addToCart(grocery))}
               className="d-flex align-items-center gap-2"
               variant=""
             >

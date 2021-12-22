@@ -1,0 +1,31 @@
+@import "./variables.module.scss";
+@import "./mixins";
+
+.cartContainer {
+  h3 {
+    text-align: center;
+    color: $tertiary-color;
+    font-size: $font-title-size;
+    margin-bottom: 20px;
+  }
+  .singleItem {
+    background: lighten($color: $tertiary-color, $amount: 52);
+    padding: 20px;
+    .title {
+      color: $secondary-color;
+    }
+    .price {
+      color: $primary-color;
+      font-family: $title-font-family;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    svg {
+      color: darken($color: $primary-color, $amount: 20);
+      cursor: pointer;
+    }
+  }
+  button {
+    @include onelifeButton;
+  }
+}

@@ -1,0 +1,34 @@
+@import "./mixins";
+@import "./variables.module.scss";
+
+.checkoutContainer {
+  .checkout {
+    padding: 30px;
+    border-radius: 10px;
+    form {
+      display: flex;
+      flex-direction: column;
+
+      gap: 20px;
+
+      &:input {
+        padding: 5px;
+      }
+      button {
+        @include onelifeButton;
+      }
+    }
+    a {
+      color: $secondary-color;
+      transition: $transition;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+    h3 {
+      text-align: center;
+      color: $primary-color;
+      margin-bottom: 20px;
+    }
+  }
+}

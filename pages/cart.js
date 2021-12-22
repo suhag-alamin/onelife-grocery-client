@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
@@ -7,6 +8,10 @@ import cartStyles from "../styles/Cart.module.scss";
 
 const Cart = () => {
   const { cartItems } = useSelector((state) => state.groceryCart);
+  const router = useRouter();
+  const handleClick = () => {
+    router.push("/checkout");
+  };
 
   return (
     <Container className={`${cartStyles.cartContainer} py-5`}>
@@ -19,7 +24,10 @@ const Cart = () => {
         ))}
       </Row>
       <div className="mt-4">
-        <Button variant=""> Proceed to checkout</Button>
+        <Button onClick={handleClick} variant="">
+          {" "}
+          Proceed to checkout
+        </Button>
       </div>
     </Container>
   );

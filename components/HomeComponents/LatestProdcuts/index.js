@@ -35,7 +35,7 @@ const LatestProdcuts = () => {
       <h3 className={`${shopStyles.title} text-center mb-4`}>
         Latest Groceries
       </h3>
-      <Row xs={1} md={4} className="g-4">
+      <Row xs={1} md={2} lg={4} className="g-4">
         {groceries?.slice(0, 4)?.map((grocery) => (
           <Col key={grocery._id}>
             <SingleGrocery grocery={grocery} />

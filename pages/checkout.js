@@ -1,14 +1,20 @@
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
+import CheckoutForm from "../components/Cart/CheckoutFrom";
 import OthersBanner from "../components/OthersBanner";
 import useAuth from "../hooks/useAuth";
 import checkoutStyles from "../styles/Checkout.module.scss";
 
+const stripePromise = loadStripe(
+  "pk_test_51Jvw1LGITY56CrX5VJRHNFpXy4tLNzFhkN82MDTtAmbCqy2wMlk7IfoxiDMyckwgqIZkI8B7MVzObX86W2qnMdaF00GELkrPsc"
+);
+
 const Checkout = () => {
   const { user } = useAuth();
-  const { totalPrice } = useSelector((state) => state.groceryCart);
   const {
     register,
     handleSubmit,
@@ -32,11 +38,11 @@ const Checkout = () => {
     <>
       <OthersBanner>Checkout</OthersBanner>
       <Container className={`${checkoutStyles.checkoutContainer} py-5`}>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Row xs={1} md={2} className="g-4">
-            <Col>
-              <div className={`${checkoutStyles.checkout} shadow`}>
-                <h3>Please give few details</h3>
+        <Row xs={1} md={2} className="g-4">
+          <Col>
+            <div className={`${checkoutStyles.checkout} shadow`}>
+              <h3>Please give few details</h3>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Control
                   required
                   type="text"
@@ -90,10 +96,11 @@ const Checkout = () => {
                   {...register("notes", { required: true })}
                 />
 
-                {/* <Button type="submit" variant="success">
-                Register
-              </Button> */}
-                {/* <div>
+                <Button type="submit" variant="success">
+                  Register
+                </Button>
+              </form>
+              {/* <div>
               <p className="text-center border-bottom pb-1">
               Or sign in Using Google
               </p>
@@ -104,15 +111,17 @@ const Checkout = () => {
                 </Button>
                 </div>
               </div> */}
-              </div>
-            </Col>
-            <Col>
-              <Button type="submit" variant="success">
+            </div>
+          </Col>
+          <Col>
+            {/* <Button type="submit" variant="success">
                 Register
-              </Button>
-            </Col>
-          </Row>
-        </form>
+              </Button> */}
+            {/* <Elements stripe={stripePromise}>
+              <CheckoutForm />
+            </Elements> */}
+          </Col>
+        </Row>
       </Container>
     </>
   );

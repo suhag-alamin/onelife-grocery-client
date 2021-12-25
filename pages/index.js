@@ -1,6 +1,7 @@
 import Banner from "../components/HomeComponents/Banner";
 import Features from "../components/HomeComponents/Features";
 import LatestProdcuts from "../components/HomeComponents/LatestProdcuts";
+import ProductCategory from "../components/HomeComponents/ProductCategory";
 
 export default function Home() {
   return (
@@ -11,6 +12,8 @@ export default function Home() {
       <Features />
       {/* latest products  */}
       <LatestProdcuts />
+      {/* product catergory  */}
+      <ProductCategory />
     </div>
   );
 }

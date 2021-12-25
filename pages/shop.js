@@ -35,7 +35,7 @@ const Shop = () => {
       <Header title="Shop - OneLife Grocery" />
       <div className={shopStyles.shop}>
         <Container className="py-5">
-          <Row xs={1} md={4} className="g-4">
+          <Row xs={1} md={2} lg={4} className="g-4">
             {groceries.map((grocery) => (
               <Col key={grocery._id}>
                 <SingleGrocery grocery={grocery} />

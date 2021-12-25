@@ -69,3 +69,70 @@
     color: $secondary-color;
   }
 }
+
+// productCategory
+.productCategory {
+  background: lighten($color: $tertiary-color, $amount: 50);
+  text-align: center;
+  .breadPastries {
+    background: linear-gradient(
+        100deg,
+        rgba(48, 49, 53, 0.2) 20%,
+        rgba(104, 109, 109, 0.3) 30%
+      ),
+      url(../images/bread-pastries.jpg) no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    h3 {
+      margin-top: 40px;
+      margin-bottom: -20px;
+      color: $white-color;
+    }
+  }
+
+  .vegitables {
+    background: linear-gradient(
+        100deg,
+        rgba(48, 49, 53, 0.2) 20%,
+        rgba(104, 109, 109, 0.3) 30%
+      ),
+      url(../images/vegetables.jpg) no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    h3 {
+      margin-top: 40px;
+      margin-bottom: -20px;
+      color: $white-color;
+    }
+  }
+  .dariy {
+    background: linear-gradient(
+        100deg,
+        rgba(48, 49, 53, 0.2) 20%,
+        rgba(104, 109, 109, 0.3) 30%
+      ),
+      url(../images/dairy.jpg) no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    h3 {
+      margin-top: 40px;
+      margin-bottom: -20px;
+      color: $white-color;
+    }
+  }
+  .meat {
+    background: linear-gradient(
+        100deg,
+        rgba(48, 49, 53, 0.2) 20%,
+        rgba(104, 109, 109, 0.3) 30%
+      ),
+      url(../images/meat.jpg) no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    h3 {
+      margin-top: 40px;
+      margin-bottom: -20px;
+      color: $white-color;
+    }
+  }
+}

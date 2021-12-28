@@ -1,17 +1,37 @@
 import { useRouter } from "next/router";
-import React from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import React, { useRef } from "react";
+import { useState } from "react";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import CartItem from "../components/Cart/CartItem";
 import OthersBanner from "../components/OthersBanner";
 import withAuth from "../components/withAuth";
+import { discountedPrice } from "../redux/slices/cartSlice";
 import cartStyles from "../styles/Cart.module.scss";
 
 const Cart = () => {
   const { cartItems, totalPrice } = useSelector((state) => state.groceryCart);
+  const dispatch = useDispatch();
   const router = useRouter();
   const handleClick = () => {
     router.push("/checkout");
+  };
+
+  const [success, setSuccess] = useState(false);
+  const couponRef = useRef();
+
+  const handleCoupon = (e) => {
+    e.preventDefault();
+    if (couponRef.current.value === "my20") {
+      const newPrice = totalPrice * 0.2;
+      dispatch(discountedPrice(newPrice));
+      setSuccess(true);
+      toast.success("Coupon code applied successfully");
+    } else {
+      toast.error("Coupon code does not match");
+    }
   };
 
   return (
@@ -32,8 +52,29 @@ const Cart = () => {
         >
           <Col>
             <h4 className={cartStyles.totalPrice}>
-              Total price: <span>$ {totalPrice}</span>
+              Total price: <span>$ {totalPrice.toFixed(2)}</span>
             </h4>
+            <div className="mt-3">
+              <h6>Have Coupon?</h6>
+              <form onSubmit={handleCoupon}>
+                <Form.Control
+                  ref={couponRef}
+                  disabled={success}
+                  className="w-50"
+                  required
+                  type="text"
+                  placeholder="Coupon code (for test: my20)"
+                />
+                <Button
+                  type="submit"
+                  variant=""
+                  className="mt-2"
+                  disabled={success}
+                >
+                  Apply
+                </Button>
+              </form>
+            </div>
           </Col>
 
           <Col>

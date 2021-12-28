@@ -37,4 +37,7 @@
   button {
     @include onelifeButton;
   }
+  h6 {
+    color: $tertiary-color;
+  }
 }

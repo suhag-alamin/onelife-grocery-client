@@ -38,7 +38,7 @@ const Checkout = () => {
     <>
       <OthersBanner>Checkout</OthersBanner>
       <Container className={`${checkoutStyles.checkoutContainer} py-5`}>
-        <Row xs={1} md={2} className="g-4">
+        <Row xs={1} md={1} className="g-4">
           <Col>
             <div className={`${checkoutStyles.checkout} shadow`}>
               <h3>Please give few details</h3>
@@ -113,14 +113,14 @@ const Checkout = () => {
               </div> */}
             </div>
           </Col>
-          <Col>
-            {/* <Button type="submit" variant="success">
+          {/* <Col> */}
+          {/* <Button type="submit" variant="success">
                 Register
               </Button> */}
-            {/* <Elements stripe={stripePromise}>
+          {/* <Elements stripe={stripePromise}>
               <CheckoutForm />
             </Elements> */}
-          </Col>
+          {/* </Col> */}
         </Row>
       </Container>
     </>

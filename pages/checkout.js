@@ -1,12 +1,16 @@
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import CheckoutForm from "../components/Cart/CheckoutFrom";
 import OthersBanner from "../components/OthersBanner";
 import useAuth from "../hooks/useAuth";
+import { addToOrderList } from "../redux/slices/cartSlice";
 import checkoutStyles from "../styles/Checkout.module.scss";
 
 const stripePromise = loadStripe(
@@ -18,6 +22,7 @@ const Checkout = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -27,13 +32,23 @@ const Checkout = () => {
   });
 
   const { cartItems, totalPrice } = useSelector((state) => state.groceryCart);
+  const dispatch = useDispatch();
   const orderedItems = cartItems?.map((item) => item._id);
 
   const onSubmit = (data) => {
     const { userName, email, phone, address, zipCode, city, notes } = data;
     data.orderedItems = orderedItems;
     data.totalPrice = totalPrice;
-    console.log(data);
+    dispatch(addToOrderList(cartItems));
+
+    axios
+      .post("https://onelife-grocery.herokuapp.com/order", data)
+      .then((result) => {
+        if (result.data?.insertedId) {
+          toast.success("Order placed successfully");
+          reset();
+        }
+      });
   };
   console.log(errors);
   return (

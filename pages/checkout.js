@@ -25,13 +25,15 @@ const Checkout = () => {
       email: user?.email,
     },
   });
+
+  const { cartItems, totalPrice } = useSelector((state) => state.groceryCart);
+  const orderedItems = cartItems?.map((item) => item._id);
+
   const onSubmit = (data) => {
-    const { userName, email, password, reEnterPassword } = data;
-    if (password !== reEnterPassword) {
-      toast.info("Password Is not matched");
-      return;
-    }
-    handleEmailRegister(userName, email, password);
+    const { userName, email, phone, address, zipCode, city, notes } = data;
+    data.orderedItems = orderedItems;
+    data.totalPrice = totalPrice;
+    console.log(data);
   };
   console.log(errors);
   return (
@@ -55,7 +57,6 @@ const Checkout = () => {
                   placeholder="Email Address"
                   {...register("email", {
                     required: true,
-                    pattern: /^\S+@\S+$/i,
                   })}
                 />
                 <Form.Control
@@ -64,7 +65,6 @@ const Checkout = () => {
                   placeholder="Phone"
                   {...register("phone", {
                     required: true,
-                    pattern: /^\S+@\S+$/i,
                   })}
                 />
 
@@ -77,7 +77,8 @@ const Checkout = () => {
                   {...register("address", { required: true })}
                 />
                 <Form.Control
-                  type="text"
+                  required
+                  type="number"
                   placeholder="Zip Code"
                   {...register("zipCode", { required: true })}
                 />
@@ -93,11 +94,11 @@ const Checkout = () => {
                   as="textarea"
                   rows={3}
                   placeholder="Order Notes (Optional) "
-                  {...register("notes", { required: true })}
+                  {...register("notes")}
                 />
 
-                <Button type="submit" variant="success">
-                  Register
+                <Button type="submit" variant="">
+                  Order
                 </Button>
               </form>
               {/* <div>

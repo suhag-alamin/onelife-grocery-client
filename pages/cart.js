@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import CartItem from "../components/Cart/CartItem";
+import Header from "../components/Header";
 import OthersBanner from "../components/OthersBanner";
 import withAuth from "../components/withAuth";
 import { discountedPrice } from "../redux/slices/cartSlice";
@@ -36,6 +37,8 @@ const Cart = () => {
 
   return (
     <>
+      {/* title  */}
+      <Header title="Cart - OneLife Grocery" />
       <OthersBanner>Groceries on your Cart</OthersBanner>
       <Container className={`${cartStyles.cartContainer} py-5`}>
         <Row xs={1} md={1} className="g-4">

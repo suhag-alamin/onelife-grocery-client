@@ -41,6 +41,9 @@ const Navigation = () => {
             </Nav>
             {/* right part  */}
             <Nav className="ms-auto d-flex align-items-center">
+              <Nav.Link as={Link} className="mt-2 mt-md-0" href="/my-account">
+                My Account
+              </Nav.Link>
               <Nav.Link
                 as={Link}
                 href="/cart"

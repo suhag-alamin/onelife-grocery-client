@@ -13,6 +13,7 @@ import {
 } from "redux-persist";
 import grocerySlice from "./slices/grocerySlice";
 import cartSlice from "./slices/cartSlice";
+import orderSlice from "./slices/orderSlice";
 
 const persistConfig = {
   key: "oneLifeGrocery",
@@ -23,6 +24,7 @@ const persistConfig = {
 const reducers = combineReducers({
   oneLifeGrocery: grocerySlice,
   groceryCart: cartSlice,
+  orderedGroceries: orderSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);

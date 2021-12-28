@@ -41,14 +41,14 @@ const Checkout = () => {
     data.totalPrice = totalPrice;
     dispatch(addToOrderList(cartItems));
 
-    axios
-      .post("https://onelife-grocery.herokuapp.com/order", data)
-      .then((result) => {
-        if (result.data?.insertedId) {
-          toast.success("Order placed successfully");
-          reset();
-        }
-      });
+    // axios
+    //   .post("https://onelife-grocery.herokuapp.com/order", data)
+    //   .then((result) => {
+    //     if (result.data?.insertedId) {
+    //       toast.success("Order placed successfully");
+    //       reset();
+    //     }
+    //   });
   };
   console.log(errors);
   return (

@@ -23,6 +23,7 @@ const cartSlice = createSlice({
     },
     addToOrderList: (state, { payload }) => {
       state.orderedItems = payload.map((item) => item);
+      state.cartItems = [];
     },
   },
 });

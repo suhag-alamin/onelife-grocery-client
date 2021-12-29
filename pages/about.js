@@ -7,7 +7,7 @@ const About = () => {
     <div>
       {/* title  */}
       <Header title="About -OneLife Grocery" />
-      <h1>this is about</h1>
+      <h1 className="text-center py-5">About page coming soon</h1>
     </div>
   );
 };

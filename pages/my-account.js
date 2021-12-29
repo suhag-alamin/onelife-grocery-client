@@ -36,36 +36,43 @@ const MyAccount = () => {
       {/* banner  */}
       <OthersBanner>My Account</OthersBanner>
       <Container className={`py-5`}>
-        <Table striped bordered hover responsive>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>City</th>
-              <th>Ordered Items</th>
-              <th>Total Price $</th>
-              <th>Payment</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {orderedItems.map((item) => (
-              <tr key={item._id}>
-                <td>{item.userName}</td>
-                <td>{item.city}</td>
-                <td>
-                  {item.orderedItems?.orderedItemsName?.map((name) => (
-                    <tr key={name}>
-                      <td>{name}</td>
-                    </tr>
-                  ))}
-                </td>
-                <td>$ {item.totalPrice}</td>
-                <td>{item.payment}</td>
-                <td>{item.status}</td>
+        <h3 className="text-center mb-4">My Orders</h3>
+        {orderedItems.length === 0 ? (
+          <p className="text-center">
+            Look like, You do not order anything yet.
+          </p>
+        ) : (
+          <Table striped bordered hover responsive>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Ordered Items</th>
+                <th>Total Price $</th>
+                <th>Payment</th>
+                <th>Status</th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </thead>
+            <tbody>
+              {orderedItems.map((item) => (
+                <tr key={item._id}>
+                  <td>{item.userName}</td>
+                  <td>{item.city}</td>
+                  <td>
+                    {item.orderedItems?.orderedItemsName?.map((name) => (
+                      <tr key={name}>
+                        <td>{name}</td>
+                      </tr>
+                    ))}
+                  </td>
+                  <td>$ {item.totalPrice}</td>
+                  <td>{item.payment}</td>
+                  <td>{item.status}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        )}
       </Container>
     </div>
   );

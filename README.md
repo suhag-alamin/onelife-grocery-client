@@ -1,34 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Logo](https://i.ibb.co/4MvCZNN/logo.png)
 
-## Getting Started
+# OneLife Grocery (Client-side)
 
-First, run the development server:
+A online Grocery Store built with Next.js, Redux, Sass and Node.js
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+[Visit our website](https://onelife-grocery.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About the website -
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- Online grocery website includes a user dashboard to view their orders.
+- Users can rate the site, and the review will be displayed in the slider on the home page.
+- Admin can add or remove products and manage all orders.
+- We have an easy-to-use website where you can order necessary groceries.
+- From our website, you can know our previous client's feedback.
+- Improved performance by optimizing and resizing images
+- Used Axios to fetch data
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Technology Used -
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Next.js, React.js, Redux, SASS (Scss), React Bootstrap, Node.js, Express.js, MongoDB Atlas, Firebase, Heroku, Stripe
 
-## Learn More
+## Author
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### [Suhag Al Amin](https://github.com/developer-suhag)

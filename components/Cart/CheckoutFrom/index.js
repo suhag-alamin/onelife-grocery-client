@@ -1,6 +1,6 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button, Spinner } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
@@ -20,7 +20,7 @@ const CheckoutForm = () => {
 
   // useEffect(() => {
   //   axios
-  //     .post("https://onelife-grocery.herokuapp.com/create-payment-intent", {
+  //     .post("https://onelife-gocery-suhag.onrender.com/create-payment-intent", {
   //       totalPrice,
   //     })
   //     .then((result) => {
@@ -35,7 +35,7 @@ const CheckoutForm = () => {
     // // Use fetch to send the token ID and any other payment data to your server.
     // // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
     // const response = await fetch(
-    //   "https://onelife-grocery.herokuapp.com/create-payment-intent",
+    //   "https://onelife-gocery-suhag.onrender.com/create-payment-intent",
     //   {
     //     method: "POST",
     //     headers: {
@@ -49,11 +49,10 @@ const CheckoutForm = () => {
     // // Return and display the result of the charge.
     // return response.json();
     axios
-      .post("https://onelife-grocery.herokuapp.com/create-payment-intent", {
+      .post("https://onelife-gocery-suhag.onrender.com/create-payment-intent", {
         totalPrice,
       })
       .then((result) => {
-        console.log(result);
         setClientSecret(result.data?.clientSecret);
       });
   }
@@ -124,7 +123,7 @@ const CheckoutForm = () => {
     //   };
 
     //   axios
-    //     .post(`https://onelife-grocery.herokuapp.com/orders/`, payment)
+    //     .post(`https://onelife-gocery-suhag.onrender.com/orders/`, payment)
     //     .then((result) => {
     //       console.log(result);
     //     });

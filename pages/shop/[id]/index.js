@@ -60,7 +60,7 @@ export default withAuth(GroceryDetails);
 
 export const getStaticProps = async (context) => {
   const res = await fetch(
-    `https://onelife-grocery.herokuapp.com/groceries/${context.params.id}`
+    `https://onelife-gocery-suhag.onrender.com/groceries/${context.params.id}`
   );
 
   const grocery = await res.json();
@@ -73,7 +73,9 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`https://onelife-grocery.herokuapp.com/groceries`);
+  const res = await fetch(
+    `https://onelife-gocery-suhag.onrender.com/groceries`
+  );
 
   const groceries = await res.json();
 

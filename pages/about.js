@@ -13,7 +13,6 @@ const About = () => {
 };
 
 About.getInitialProps = async (props) => {
-  console.info("##### Congratulations! You are authorized! ######", props);
   return {};
 };
 

@@ -1,13 +1,10 @@
-import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import CheckoutForm from "../components/Cart/CheckoutFrom";
 import Header from "../components/Header";
 import OthersBanner from "../components/OthersBanner";
 import useAuth from "../hooks/useAuth";
@@ -49,7 +46,7 @@ const Checkout = () => {
     dispatch(placeOrder());
 
     axios
-      .post("https://onelife-grocery.herokuapp.com/order", data)
+      .post("https://onelife-gocery-suhag.onrender.com/order", data)
       .then((result) => {
         if (result.data?.insertedId) {
           toast.success("Order placed successfully");
@@ -57,7 +54,6 @@ const Checkout = () => {
         }
       });
   };
-  console.log(errors);
   return (
     <>
       {/* title  */}

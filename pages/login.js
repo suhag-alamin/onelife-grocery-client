@@ -11,7 +11,6 @@ import registerStyles from "../styles/Register.module.scss";
 const Login = () => {
   const { signInWithGoogle, handleEmailLogin } = useAuth();
   const router = useRouter();
-  console.log(router);
   const {
     register,
     handleSubmit,

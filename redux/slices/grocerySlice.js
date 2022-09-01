@@ -5,7 +5,7 @@ import axios from "axios";
 //   "grocery/fetchGroceries",
 //   async (userId, thunkAPI) => {
 //     const response = await fetch(
-//       "https://onelife-grocery.herokuapp.com/groceries"
+//       "https://onelife-gocery-suhag.onrender.com/groceries"
 //     ).then((res) => res.json());
 //     return response;
 //   }
@@ -14,7 +14,7 @@ export const fetchGroceries = createAsyncThunk(
   "grocery/fetchGroceries",
   async (userId, thunkAPI) => {
     const response = await axios.get(
-      "https://onelife-grocery.herokuapp.com/groceries"
+      "https://onelife-gocery-suhag.onrender.com/groceries"
     );
     return response.data;
   }

@@ -17,7 +17,6 @@ const LatestProdcuts = () => {
   const { oneLifeGrocery } = useSelector((state) => state);
   const { groceries } = oneLifeGrocery;
   const router = useRouter();
-  console.log(oneLifeGrocery);
   // loading spinner
   if (oneLifeGrocery.status === "pending") {
     return (

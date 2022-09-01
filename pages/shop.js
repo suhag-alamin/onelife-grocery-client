@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "../components/Header";
 import SingleGrocery from "../components/SingleGrocery";
 import { fetchGroceries } from "../redux/slices/grocerySlice";
 import shopStyles from "../styles/Shop.module.scss";
 
-// https://onelife-grocery.herokuapp.com
+// https://onelife-gocery-suhag.onrender.com
 const Shop = () => {
   const [isLoading, setIsLoading] = useState(true);
   // get groceries from redux store

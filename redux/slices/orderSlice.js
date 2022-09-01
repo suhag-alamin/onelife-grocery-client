@@ -5,7 +5,7 @@ export const fetchOrderedItems = createAsyncThunk(
   "orderedGrocery/fetchOrderedItems",
   async (email) => {
     const response = await axios.get(
-      `https://onelife-grocery.herokuapp.com/orders?email=${email}`
+      `https://onelife-gocery-suhag.onrender.com/orders?email=${email}`
     );
     return response.data;
   }
